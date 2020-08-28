@@ -5,9 +5,6 @@
 		<div id="content-area" class="clearfix">
 			<div id="left-area">
 		<?php
-
-
-
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
 					$post_format = et_pb_post_format(); ?>
@@ -15,16 +12,16 @@
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' ); ?>>
 
 				<?php
-
 					$thumb = '';
 
 					$width = (int) apply_filters( 'et_pb_index_blog_image_width', 1080 );
 
-					$height = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
+					$height    = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
 					$classtext = 'et_pb_post_main_image';
 					$titletext = get_the_title();
-					$thumbnail = get_thumbnail( $width, $height, $classtext, $titletext, $titletext, false, 'Blogimage' );
-					$thumb = $thumbnail["thumb"];
+					$alttext   = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+					$thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Blogimage' );
+					$thumb     = $thumbnail["thumb"];
 
 					et_divi_post_format_content();
 
