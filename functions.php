@@ -29,3 +29,5 @@ endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 99 );
 
 // END ENQUEUE PARENT ACTION
+
+require_once( get_stylesheet_directory(). '/customizer.php' ); // customizer functions

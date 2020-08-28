@@ -99,6 +99,9 @@ function DC_theme_customizer( $wp_customize ){
         )
     );
 
+
+
+
     // footer sticky
     $wp_customize->add_setting( 'et_divi_footer_elements_sticky', array(
         'default'    => '1'
